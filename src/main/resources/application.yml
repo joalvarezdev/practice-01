@@ -1,0 +1,36 @@
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  application:
+    name: is-for-the-mate
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  main:
+    allow-bean-definition-overriding: true
+
+  liquibase:
+    change-log: classpath:database/liquibase-changelog.yml
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+    enabled: true
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: false
+
+server:
+  port: ${APP_PORT}
