@@ -21,3 +21,20 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn clean package
+      - name: Copy JAR file to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER_SERVER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: target/challenge.jar
+          target: /root/app/challenge.jar
+      - name: SSH into server and run docker-compose
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER_SERVER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /root/app
+            docker compose up -d
