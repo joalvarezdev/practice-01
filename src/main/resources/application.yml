@@ -34,3 +34,8 @@ spring:
 
 server:
   port: ${APP_PORT}
+
+app:
+  name: '@project.name@'
+  description: '@project.description@'
+  version: '@project.version@'
