@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   challenge:
-    build: .
+    build: joalvarezdev/joalvarez
     ports:
       - '8090:8090'
     links:
