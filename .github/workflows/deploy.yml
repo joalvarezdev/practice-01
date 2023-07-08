@@ -27,7 +27,7 @@ jobs:
           image: joalvarezdev/joalvarez
           tags: v1, latest
           registry: docker.io
-          dockerfile: Dockerfile.io
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 #      - name: Copy JAR file to server
