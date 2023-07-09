@@ -5,7 +5,6 @@ import com.joalvarez.challenge.data.dto.ResponseDTO;
 import com.joalvarez.challenge.data.enums.InternalCode;
 import com.joalvarez.challenge.exception.GenericException;
 import com.joalvarez.challenge.exception.HasLogger;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

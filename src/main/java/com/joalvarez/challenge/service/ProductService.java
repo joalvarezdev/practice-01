@@ -6,6 +6,7 @@ import com.joalvarez.challenge.data.enums.InternalCode;
 import com.joalvarez.challenge.data.mapper.ProductMapper;
 import com.joalvarez.challenge.data.repository.ProductRepository;
 import com.joalvarez.challenge.exception.GenericException;
+import com.joalvarez.challenge.exception.GenericGraphQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -90,6 +91,16 @@ public class ProductService {
 		this.repository.save(this.mapper.toEntity(dto));
 
 		return dto;
+	}
+
+	public ProductDTO findByIdGrapgh(String id) {
+		UUID idFind;
+		try {
+			idFind = UUID.fromString(id);
+		} catch (Exception ex) {
+			throw new GenericGraphQLException(ex.getMessage());
+		}
+		return this.getById(idFind);
 	}
 
 	private Product saveProduct(ProductDTO dto) {
