@@ -1,0 +1,25 @@
+# Query - Solo para realizar consultas
+type Query {
+	findProductById(id:String!): Product,
+	findAllProducts: [Product]
+}
+
+type Mutation {
+	createProduct(product: InputProduct) : Product
+}
+
+type Product {
+	id : String,
+	name : String,
+	price : Float,
+	stock : Int,
+	active : Boolean
+}
+
+input InputProduct {
+	id : ID,
+	name : String!,
+	price : Float!,
+	stock : Int!
+	active : Boolean
+}

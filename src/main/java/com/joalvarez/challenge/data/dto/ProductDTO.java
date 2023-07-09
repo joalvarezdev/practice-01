@@ -2,8 +2,6 @@ package com.joalvarez.challenge.data.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.joalvarez.challenge.data.enums.InternalCode;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;

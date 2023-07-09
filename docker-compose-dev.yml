@@ -1,17 +1,5 @@
 version: '3.9'
 services:
-  challenge:
-    build: .
-    image: joalvarezdev/joalvarez
-    ports:
-      - '8090:8090'
-    links:
-      - psqldata
-    environment:
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - APP_PORT=${APP_PORT}
   psqldata:
     image: postgres:15
     container_name: psqldata

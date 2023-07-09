@@ -10,6 +10,10 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+  graphql:
+    graphiql:
+      enabled: true # /graphiql
+
   liquibase:
     change-log: classpath:database/liquibase-changelog.yml
     url: jdbc:postgresql://psqldata:5432/${DB_NAME}
@@ -34,6 +38,8 @@ spring:
 
 server:
   port: ${APP_PORT}
+  servlet:
+    context-path: /challenge
 
 app:
   name: '@project.name@'
